@@ -6,8 +6,8 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         // criando um array para as contas
         conta[] contas = new conta[2];
-        contas[0] = new conta("Tallys", 205, 3120, 3500);
-        contas[1] = new conta("Ester", 301, 3146, 2000);
+        contas[0] = new contaCorrente("Tallys", 205, 3120, 3500);
+        contas[1] = new contaCorrente("Ester", 301, 3146, 2000);
         int index = 0;
         while (true) {
             System.out.println("---------- Cadastro ----------");
@@ -37,10 +37,10 @@ public class Main {
                 System.out.println("Conta Cadastrada com sucesso!");
                 teclado.nextLine();
             }
-            //fazer uma classe login
+            // fazer uma classe login
             System.out.println("Você Deseja Entrar na Sua Conta? S/N");
             String login = teclado.nextLine();
-            if (login.equalsIgnoreCase("S")|| login.equalsIgnoreCase("SIM")){
+            if (login.equalsIgnoreCase("S") || login.equalsIgnoreCase("SIM")) {
                 boolean logado = false;
                 while (!logado) {
                     // Entrada de Dados
@@ -62,11 +62,10 @@ public class Main {
 
                     }
 
-
-
                     if (contaSelecionada != null) {
                         logado = true;// usuario logado
-                        System.out.println("Olá Sr(a) " + contaSelecionada.getName() + ", seu saldo é R$: " + contaSelecionada.getSaldo());
+                        System.out.println("Olá Sr(a) " + contaSelecionada.getName() + ", seu saldo é R$: "
+                                + contaSelecionada.getSaldo());
 
                         System.out.println("Você deseja fazer um depósito? S / N : ");
                         String dep = teclado.nextLine();
@@ -75,7 +74,8 @@ public class Main {
                             System.out.println("Digite o valor: ");
                             double novoSaldo = contaSelecionada.Deposito(teclado.nextDouble());
                             teclado.nextLine();
-                            System.out.println("Sr(a) " + contaSelecionada.getName() + ", seu novo saldo é : " + novoSaldo);
+                            System.out.println(
+                                    "Sr(a) " + contaSelecionada.getName() + ", seu novo saldo é : " + novoSaldo);
                         }
                         if (logado == true) {
                             System.out.println("Você deseja fazer uma retirada? S / N : ");
@@ -87,12 +87,14 @@ public class Main {
                                 double saqueSaldo = contaSelecionada.saque(saque);
                                 teclado.nextLine();
                                 if (valor == true) {
-                                    System.out.println("Para confirmar o saque de R$ " + saque + " por favor digite a senha: ");
+                                    System.out.println(
+                                            "Para confirmar o saque de R$ " + saque + " por favor digite a senha: ");
                                     String senhas;
                                     senhas = teclado.nextLine();
-                                    if(Objects.equals(senhas, conta.getSenha())) {
+                                    if (Objects.equals(senhas, conta.getSenha())) {
 
-                                            System.out.println("Sr(a) " + contaSelecionada.getName() + ", seu novo saldo é : " + saqueSaldo);
+                                        System.out.println("Sr(a) " + contaSelecionada.getName()
+                                                + ", seu novo saldo é : " + saqueSaldo);
 
                                     } else {
                                         System.out.println("Senha Incorreta!");
@@ -114,13 +116,13 @@ public class Main {
                         }
                     }
 
-               }
-            }else{
-                System.out.println("Obrigado");
-                break;}
+                }
+            } else {
+                System.out.println("Obrigado!!");
+                break;
+            }
             System.out.println("Contas Instaciadas: " + contaCorrente.total);
 
         }
     }
 }
-
