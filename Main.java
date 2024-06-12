@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner teclado = new Scanner(System.in);
         // criando um array para as contas
+        // Senha para o saque é "sim"
         conta[] contas = new conta[2];
         contas[0] = new contaCorrente("Tallys", 205, 3120, 3500);
         contas[1] = new contaCorrente("Ester", 301, 3146, 2000);
