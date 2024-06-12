@@ -5,9 +5,9 @@ class conta {
     private double saldo;
     private static String senha = "sim";
 
-    static int total=0;
+    static int total = 0;
 
-    public conta(String nome, int ag, int co,double saldo) {
+    public conta(String nome, int ag, int co, double saldo) {
         conta.total++;
         setName(nome);
         setAg(ag);
@@ -17,9 +17,6 @@ class conta {
 
     public static String getSenha() {
         return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getName() {
@@ -54,10 +51,11 @@ class conta {
         this.saldo = saldo;
     }
 
-    public double Deposito (double valor) {
+    public double Deposito(double valor) {
         saldo += valor;
         return saldo;
     }
+
     public double saque(double valor) {
         if (valor <= saldo) {
             saldo -= valor;
