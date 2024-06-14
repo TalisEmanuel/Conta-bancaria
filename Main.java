@@ -8,7 +8,7 @@ public class Main {
         // Senha para o saque é "sim"
         conta[] contas = new conta[2];
         contas[0] = new contaCorrente("Tallys", 205, 3120, 3500);
-        contas[1] = new contaCorrente("Ester", 301, 3146, 2000);
+        contas[1] = new contaPoupança("Ester", 301, 3146, 2000);
         int index = 0;
         while (true) {
             System.out.println("---------- Cadastro ----------");

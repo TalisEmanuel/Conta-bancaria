@@ -1,4 +1,4 @@
-class conta {
+abstract class conta {
     private String nome;
     private int ag;
     private int co;
